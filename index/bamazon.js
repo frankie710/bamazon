@@ -18,8 +18,9 @@ connection.connect(function (err) {
 
 function start() {
     console.log(('Welcome to Bamazon! \n Products'));
-    connection.query('SELECT * FROM products', (error, result) => {
-        if (error) throw (error);
+    connection.query('SELECT * FROM products', (err, result) => {
+        if (err)
+            throw (err);
         var items = result;
         console.log(items);
     });
